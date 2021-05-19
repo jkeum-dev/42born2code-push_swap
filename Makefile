@@ -1,21 +1,23 @@
 NAME = push_swap
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 # CFLAGS = -g3 -fsanitize=address
 
 AR = ar
 ARFLAGS = rc
 
-SRCS_DIR =	
+SRCS_DIR =	./srcs
 
 OBJS_DIR = ./objs
 INC_DIR = ./includes
 
 LIBFT = libft.a
-LIBFT_DIR = ./lib/libft
+LIBFT_DIR = ./libft
 
-SRCS =	
+SRCS =	./srcs/main.c		\
+		./srcs/ft_atoll.c	\
+		./srcs/check_arg.c
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
