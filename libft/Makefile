@@ -6,7 +6,7 @@
 #    By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/02 15:58:25 by jkeum             #+#    #+#              #
-#    Updated: 2020/10/12 19:38:55 by jkeum            ###   ########.fr        #
+#    Updated: 2021/05/21 18:48:36 by jkeum            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 	   ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strnstr.c \
 	   ft_memset.c ft_bzero.c ft_memmove.c \
 	   ft_memcpy.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
-	   ft_atoi.c ft_calloc.c ft_strdup.c \
+	   ft_calloc.c ft_strdup.c \
 	   ft_substr.c ft_strjoin.c ft_strtrim.c \
 	   ft_split.c ft_itoa.c ft_strmapi.c \
 	   ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
