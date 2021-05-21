@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	ft_atoll(char *arg)
+int	ft_atoi(char *arg)
 {
 	int			i;
 	int			sign;

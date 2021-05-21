@@ -16,7 +16,7 @@ LIBFT = libft.a
 LIBFT_DIR = ./libft
 
 SRCS =	./srcs/main.c		\
-		./srcs/ft_atoll.c	\
+		./srcs/ft_atoi.c	\
 		./srcs/check_arg.c
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
