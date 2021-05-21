@@ -7,7 +7,7 @@ int	ft_atoi(char *arg)
 	long long	value;
 
 	if (!check_arg(arg))
-		exit(0);
+		print_error();
 	i = 0;
 	sign = 1;
 	value = 0;
@@ -20,6 +20,6 @@ int	ft_atoi(char *arg)
 		value = value * 10 + (arg[i++] - '0');
 	value = value * sign;
 	if (value > INT32_MAX || value < INT32_MIN)
-		exit(0);
+		print_error();
 	return (value);
 }
