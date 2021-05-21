@@ -9,6 +9,16 @@ void	print_error(void)
 
 int	main(int argc, char *argv[])
 {
-	
+	t_stack	*a;
+
+	a = init_stack(argc, argv);
+	while (a)
+	{
+		printf("%d\n", a->value);
+		if (a->next)
+			a = a->next;
+		else
+			break ;
+	}
 	return (0);
 }
