@@ -9,7 +9,9 @@
 void	print_error(void);
 int		check_arg(char *arg);
 int		ft_atoi(char *arg);
-t_listp	*make_listp(void);
-t_stack	*make_stack(int argc, char **argv, t_listp **listp);
+t_stack	*init_stack(void);
+t_node	*init_node(void);
+t_node	*make_stack(int argc, char **argv, t_stack **stack);
+void	push_pop(t_stack **from, t_stack **to);
 
 #endif
