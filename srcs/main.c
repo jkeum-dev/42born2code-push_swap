@@ -9,21 +9,61 @@ void	print_error(void)
 
 int	main(int argc, char *argv[])
 {
-	t_listp	*listp;
 	t_stack	*a;
+	t_node	*a_node;
+	t_stack	*b;
+	t_node	*b_node;
 
-	listp = make_listp();
-	a = make_stack(argc, argv, &listp);
-	while (a)
+	a = init_stack();
+	a_node = make_stack(argc, argv, &a);
+	b = init_stack();
+	printf("stack a\n");
+	while (a_node)
 	{
-		printf("%d\t", a->value);
-		if (a->next)
-			a = a->next;
+		printf("%d\t", a_node->value);
+		if (a_node->next)
+			a_node = a_node->next;
 		else
 			break ;
 	}
-	printf("\ntop:\t%d\n", listp->top->value);
-	printf("bottom:\t%d\n", listp->bottom->value);
-	printf("size:\t%d\n", listp->size);
+	printf("\ntop:\t%d\n", a->top->value);
+	printf("bottom:\t%d\n", a->bottom->value);
+	printf("size:\t%d\n", a->size);
+
+	push_pop(&a, &b);
+	push_pop(&a, &b);
+
+	b_node = b->top;
+
+	while (a_node->prev)
+		a_node = a_node->prev;
+	printf("\n\nstack a\n");
+	while (a_node)
+	{
+		printf("%d\t", a_node->value);
+		if (a_node->next)
+			a_node = a_node->next;
+		else
+			break ;
+	}
+	if (a->top && a->bottom)
+	{
+		printf("\ntop:\t%d\n", a->top->value);
+		printf("bottom:\t%d\n", a->bottom->value);
+		printf("size:\t%d\n", a->size);
+	}
+
+	printf("\n\nstack b\n");
+	while (b_node)
+	{
+		printf("%d\t", b_node->value);
+		if (b_node->next)
+			b_node = b_node->next;
+		else
+			break ;
+	}
+	printf("\ntop:\t%d\n", b->top->value);
+	printf("bottom:\t%d\n", b->bottom->value);
+	printf("size:\t%d\n", b->size);
 	return (0);
 }
