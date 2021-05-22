@@ -12,6 +12,6 @@ int		ft_atoi(char *arg);
 t_stack	*init_stack(void);
 t_node	*init_node(void);
 t_node	*make_stack(int argc, char **argv, t_stack **stack);
-void	push_pop(t_stack **from, t_stack **to);
+void	push_pop(t_stack *from, t_stack *to);
 
 #endif

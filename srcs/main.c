@@ -7,6 +7,11 @@ void	print_error(void)
 	exit(0);
 }
 
+// int		main(int argc, char *argv[])
+// {
+	
+// }
+
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
@@ -30,8 +35,8 @@ int	main(int argc, char *argv[])
 	printf("bottom:\t%d\n", a->bottom->value);
 	printf("size:\t%d\n", a->size);
 
-	push_pop(&a, &b);
-	push_pop(&a, &b);
+	push_pop(a, b);
+	push_pop(a, b);
 
 	b_node = b->top;
 
