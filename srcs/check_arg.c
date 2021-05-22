@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	chk_arg_length(char *arg)
+static int	chk_arg_length(char *arg)
 {
 	int	i;
 	int	len;
@@ -19,7 +19,7 @@ int	chk_arg_length(char *arg)
 	return (len);
 }
 
-int	is_numeric(char *arg)
+static int	is_numeric(char *arg)
 {
 	int	i;
 
