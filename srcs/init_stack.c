@@ -1,23 +1,23 @@
 #include "push_swap.h"
 
-t_listp	*make_listp(void)
+t_stack	*init_stack(void)
 {
-	t_listp	*listp;
+	t_stack	*stack;
 
-	listp = (t_listp *)malloc(sizeof(t_listp));
-	if (!listp)
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!stack)
 		return (NULL);
-	listp->size = 0;
-	listp->top = NULL;
-	listp->bottom = NULL;
-	return (listp);
+	stack->size = 0;
+	stack->top = NULL;
+	stack->bottom = NULL;
+	return (stack);
 }
 
-static t_stack	*init_node(void)
+t_node	*init_node(void)
 {
-	t_stack	*node;
+	t_node	*node;
 
-	node = (t_stack *)malloc(sizeof(t_stack));
+	node = (t_node *)malloc(sizeof(t_node));
 	if (!node)
 		return (NULL);
 	node->value = 0;
@@ -26,26 +26,26 @@ static t_stack	*init_node(void)
 	return (node);
 }
 
-static void	connect_list(t_stack **temp, t_stack **node, t_listp **listp)
+static void	connect_list(t_node **temp, t_node **node, t_stack **stack)
 {
 	if (!*node)
 	{
 		*node = *temp;
-		(*listp)->top = *node;
+		(*stack)->top = *node;
 	}
 	else
 	{
 		(*node)->next = *temp;
 		(*temp)->prev = *node;
-		(*node) = (*node)->next;
+		*node = (*node)->next;
 	}
 }
 
-t_stack	*make_stack(int argc, char **argv, t_listp **listp)
+t_node	*make_stack(int argc, char **argv, t_stack **stack)
 {
 	int		i;
-	t_stack	*temp;
-	t_stack	*node;
+	t_node	*temp;
+	t_node	*node;
 
 	i = 0;
 	node = NULL;
@@ -55,10 +55,10 @@ t_stack	*make_stack(int argc, char **argv, t_listp **listp)
 		temp->value = ft_atoi(argv[i]);
 		if (!temp)
 			return (NULL);
-		connect_list(&temp, &node, listp);
-		(*listp)->size++;
+		connect_list(&temp, &node, stack);
+		(*stack)->size++;
 		if (i == argc - 1)
-			(*listp)->bottom = node;
+			(*stack)->bottom = node;
 	}
 	while (node->prev)
 		node = node->prev;
