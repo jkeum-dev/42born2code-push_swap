@@ -7,8 +7,8 @@ typedef struct s_stack	t_stack;
 struct s_listp
 {
 	int		size;
-	t_stack	*head;
-	t_stack	*tail;
+	t_stack	*top;
+	t_stack	*bottom;
 };
 
 struct	s_stack
