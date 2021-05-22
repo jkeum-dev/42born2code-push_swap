@@ -38,7 +38,10 @@ static int	is_numeric(char *arg)
 
 int	check_arg(char *arg)
 {
-	if (!is_numeric(arg) || chk_arg_length(arg) > 11)
+	int	len;
+
+	len = chk_arg_length(arg);
+	if (!is_numeric(arg) || len > 11 || len < 0)
 		return (0);
 	else
 		return (1);
