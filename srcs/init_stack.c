@@ -13,14 +13,14 @@ t_listp	*make_listp(void)
 	return (listp);
 }
 
-static t_stack	*make_node(int argc, char *argv)
+static t_stack	*init_node(void)
 {
 	t_stack	*node;
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
-	node->value = ft_atoi(argv);
+	node->value = 0;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);
@@ -51,7 +51,8 @@ t_stack	*make_stack(int argc, char **argv, t_listp **listp)
 	node = NULL;
 	while (++i < argc)
 	{
-		temp = make_node(argc, argv[i]);
+		temp = init_node();
+		temp->value = ft_atoi(argv[i]);
 		if (!temp)
 			return (NULL);
 		connect_list(&temp, &node, listp);
