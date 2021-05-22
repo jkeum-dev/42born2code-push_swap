@@ -7,8 +7,9 @@
 # include "structures.h"
 
 void	print_error(void);
-int		ft_atoi(char *arg);
 int		check_arg(char *arg);
-t_stack	*init_stack(int argc, char **argv);
+int		ft_atoi(char *arg);
+t_listp	*make_listp(void);
+t_stack	*make_stack(int argc, char **argv, t_listp **listp);
 
 #endif
