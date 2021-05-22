@@ -16,14 +16,14 @@ int	main(int argc, char *argv[])
 	a = make_stack(argc, argv, &listp);
 	while (a)
 	{
-		printf("%d\n", a->value);
+		printf("%d\t", a->value);
 		if (a->next)
 			a = a->next;
 		else
 			break ;
 	}
-	printf("%d\n", listp->head->value);
-	printf("%d\n", listp->tail->value);
-	printf("%d\n", listp->size);
+	printf("\ntop:\t%d\n", listp->top->value);
+	printf("bottom:\t%d\n", listp->bottom->value);
+	printf("size:\t%d\n", listp->size);
 	return (0);
 }
