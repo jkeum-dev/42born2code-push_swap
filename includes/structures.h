@@ -1,7 +1,15 @@
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
 
+typedef struct s_listp	t_listp;
 typedef struct s_stack	t_stack;
+
+struct s_listp
+{
+	int		size;
+	t_stack	*head;
+	t_stack	*tail;
+};
 
 struct	s_stack
 {
