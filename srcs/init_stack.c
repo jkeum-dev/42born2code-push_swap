@@ -8,8 +8,8 @@ t_listp	*make_listp(void)
 	if (!listp)
 		return (NULL);
 	listp->size = 0;
-	listp->head = NULL;
-	listp->tail = NULL;
+	listp->top = NULL;
+	listp->bottom = NULL;
 	return (listp);
 }
 
@@ -31,7 +31,7 @@ static void	connect_list(t_stack **temp, t_stack **node, t_listp **listp)
 	if (!*node)
 	{
 		*node = *temp;
-		(*listp)->head = *node;
+		(*listp)->top = *node;
 	}
 	else
 	{
@@ -57,7 +57,7 @@ t_stack	*make_stack(int argc, char **argv, t_listp **listp)
 		connect_list(&temp, &node, listp);
 		(*listp)->size++;
 		if (i == argc - 1)
-			(*listp)->tail = node;
+			(*listp)->bottom = node;
 	}
 	while (node->prev)
 		node = node->prev;
