@@ -9,9 +9,11 @@ void	print_error(void)
 
 int	main(int argc, char *argv[])
 {
+	t_listp	*listp;
 	t_stack	*a;
 
-	a = init_stack(argc, argv);
+	listp = make_listp();
+	a = make_stack(argc, argv, &listp);
 	while (a)
 	{
 		printf("%d\n", a->value);
@@ -20,5 +22,8 @@ int	main(int argc, char *argv[])
 		else
 			break ;
 	}
+	printf("%d\n", listp->head->value);
+	printf("%d\n", listp->tail->value);
+	printf("%d\n", listp->size);
 	return (0);
 }
