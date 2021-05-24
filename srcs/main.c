@@ -17,6 +17,11 @@ int	main(int argc, char *argv[])
 	a = init_stack();
 	a_node = make_stack(argc, argv, &a);
 	b = init_stack();
+
+	check_duplicate(a_node);
+	while (a_node->prev)
+		a_node = a_node->prev;
+
 	printf("stack a\n");
 	while (a_node)
 	{
