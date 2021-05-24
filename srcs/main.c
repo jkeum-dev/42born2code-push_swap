@@ -7,11 +7,6 @@ void	print_error(void)
 	exit(0);
 }
 
-// int		main(int argc, char *argv[])
-// {
-	
-// }
-
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
@@ -37,11 +32,16 @@ int	main(int argc, char *argv[])
 
 	push_pop(a, b);
 	push_pop(a, b);
+	push_pop(a, b);
 
 	b_node = b->top;
+	swap_stack(b, B);
+	// swap_all_stack(a, b);
 
 	while (a_node->prev)
 		a_node = a_node->prev;
+	while (b_node->prev)
+		b_node = b_node->prev;
 	printf("\n\nstack a\n");
 	while (a_node)
 	{
