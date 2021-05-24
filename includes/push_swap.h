@@ -8,6 +8,7 @@
 
 void	print_error(void);
 int		check_arg(char *arg);
+void	check_duplicate(t_node *a);
 int		ft_atoi(char *arg);
 t_stack	*init_stack(void);
 t_node	*init_node(void);
