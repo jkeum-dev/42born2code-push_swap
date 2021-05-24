@@ -7,7 +7,8 @@ CC = gcc
 AR = ar
 ARFLAGS = rc
 
-SRCS_DIR =	./srcs
+SRCS_DIR =	./srcs				\
+			./srcs/operations	\
 
 OBJS_DIR = ./objs
 INC_DIR = ./includes
@@ -20,6 +21,7 @@ SRCS =	./srcs/main.c		\
 		./srcs/ft_atoi.c	\
 		./srcs/init_stack.c	\
 		./srcs/push_pop.c	\
+		./srcs/operations/swap_stack.c	\
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
