@@ -33,8 +33,9 @@ int	main(int argc, char *argv[])
 	push_stack(a, b, B);
 	push_stack(a, b, B);
 	b_node = b->top;
-	swap_stack(b, B);
-	rotate_all_stack(a, b, ALL);
+	// swap_stack(b, B);
+	// rotate_all_stack(a, b, ALL);
+	reverse_rotate_all_stack(a, b, ALL);
 
 	while (a_node->prev)
 		a_node = a_node->prev;
