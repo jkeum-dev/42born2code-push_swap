@@ -30,10 +30,8 @@ int	main(int argc, char *argv[])
 	printf("bottom:\t%d\n", a->bottom->value);
 	printf("size:\t%d\n", a->size);
 
-	push_pop(a, b);
-	push_pop(a, b);
-	push_pop(a, b);
-
+	push_stack(a, b, B);
+	push_stack(a, b, B);
 	b_node = b->top;
 	swap_stack(b, B);
 	// swap_all_stack(a, b);
