@@ -8,7 +8,7 @@ AR = ar
 ARFLAGS = rc
 
 SRCS_DIR =	./srcs				\
-			./srcs/operations	\
+			./srcs/operations
 
 OBJS_DIR = ./objs
 INC_DIR = ./includes
@@ -20,9 +20,10 @@ SRCS =	./srcs/main.c		\
 		./srcs/check_arg.c	\
 		./srcs/ft_atoi.c	\
 		./srcs/init_stack.c	\
-		./srcs/operations/push.c	\
-		./srcs/operations/rotate.c	\
-		./srcs/operations/swap.c	\
+		./srcs/operations/push.c			\
+		./srcs/operations/reverse_rotate.c	\
+		./srcs/operations/rotate.c			\
+		./srcs/operations/swap.c
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
