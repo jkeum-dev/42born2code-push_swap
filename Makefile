@@ -20,7 +20,7 @@ SRCS =	./srcs/main.c		\
 		./srcs/check_arg.c	\
 		./srcs/ft_atoi.c	\
 		./srcs/init_stack.c	\
-		./srcs/push_pop.c	\
+		./srcs/operations/push_stack.c	\
 		./srcs/operations/swap_stack.c	\
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
