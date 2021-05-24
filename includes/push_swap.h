@@ -17,5 +17,7 @@ void	swap_all_stack(t_stack *a, t_stack *b, int flag);
 void	push_stack(t_stack *from, t_stack *to, int flag);
 void	rotate_stack(t_stack *stack, int flag);
 void	rotate_all_stack(t_stack *a, t_stack *b, int flag);
+void	reverse_rotate_stack(t_stack *stack, int flag);
+void	reverse_rotate_all_stack(t_stack *a, t_stack *b, int flag);
 
 #endif
