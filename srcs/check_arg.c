@@ -46,3 +46,28 @@ int	check_arg(char *arg)
 	else
 		return (1);
 }
+
+void	check_duplicate(t_node *a)
+{
+	int		cur_value;
+	t_node	*temp;
+
+	while (a->next)
+	{
+		temp = a->next;
+		cur_value = a->value;
+		while (temp)
+		{
+			if (temp->value == cur_value)
+				print_error();
+			if (temp->next)
+				temp = temp->next;
+			else
+				break ;
+		}
+		while (temp->value != cur_value)
+			temp = temp->prev;
+		temp = temp->next;
+		a = a->next;
+	}
+}
