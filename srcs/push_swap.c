@@ -11,9 +11,11 @@ int		is_big_three(int value, t_value *big)
 void	left_three_value_a(t_stack *a, t_stack *b)
 {
 	int	i;
+	int	cnt;
 
 	i = -1;
-	while (++i < a->size)
+	cnt = a->size;
+	while (++i < cnt)
 	{
 		if (!is_big_three(a->top->value, a->big))
 			push_stack(a, b, B);
