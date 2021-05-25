@@ -7,23 +7,16 @@ void	print_error(void)
 	exit(0);
 }
 
-void	set_stack_a(int argc, char **argv, t_stack *a)
+void	set_stack_a(int argc, char **argv, t_stack **a)
 {
-	a->top = make_stack(argc, argv, a);
-	check_duplicate(a->top);
-	get_big_three_values(a);
+	(*a)->top = make_stack(argc, argv, a);
+	check_duplicate((*a)->top);
+	get_big_three_values(*a);
 }
 
-int	main(int argc, char *argv[])
+void	print_stack_a(t_stack *a)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = init_stack();
-	set_stack_a(argc, argv, a);
-	b = init_stack();
-
-	printf("stack a\n");
+	printf("\n\nstack a\n");
 	while (a->top)
 	{
 		printf("%d\t", a->top->value);
@@ -32,9 +25,49 @@ int	main(int argc, char *argv[])
 		else
 			break ;
 	}
-	printf("\ntop:\t%d\n", a->top->value);
-	printf("bottom:\t%d\n", a->bottom->value);
-	printf("size:\t%d\n", a->size);
+	while (a->top->prev)
+		a->top = a->top->prev;
+	if (a->top && a->bottom)
+	{
+		printf("\ntop:\t%d\n", a->top->value);
+		printf("bottom:\t%d\n", a->bottom->value);
+		printf("size:\t%d\n", a->size);
+	}
+}
+
+void	print_stack_b(t_stack *b)
+{
+	printf("\n\nstack b\n");
+	while (b->top)
+	{
+		printf("%d\t", b->top->value);
+		if (b->top->next)
+			b->top = b->top->next;
+		else
+			break ;
+	}
+	while (b->top->prev)
+		b->top = b->top->prev;
+	if (b->top && b->bottom)
+	{
+		printf("\ntop:\t%d\n", b->top->value);
+		printf("bottom:\t%d\n", b->bottom->value);
+		printf("size:\t%d\n", b->size);
+	}
+}
+
+int	main(int argc, char *argv[])
+{
+	t_stack	*a;
+	t_stack	*b;
+
+	a = init_stack();
+	set_stack_a(argc, argv, &a);
+	b = init_stack();
+
+	print_stack_a(a);
+
+	push_swap(a, b);
 
 	// push_stack(a, b, B);
 	// push_stack(a, b, B);
@@ -42,37 +75,8 @@ int	main(int argc, char *argv[])
 	// // rotate_all_stack(a, b, ALL);
 	// reverse_rotate_all_stack(a, b, ALL);
 
-	// while (a->top->prev)
-	// 	a->top = a->top->prev;
-	// while (b->top->prev)
-	// 	b->top = b->top->prev;
-	// printf("\n\nstack a\n");
-	// while (a->top)
-	// {
-	// 	printf("%d\t", a->top->value);
-	// 	if (a->top->next)
-	// 		a->top = a->top->next;
-	// 	else
-	// 		break ;
-	// }
-	// if (a->top && a->bottom)
-	// {
-	// 	printf("\ntop:\t%d\n", a->top->value);
-	// 	printf("bottom:\t%d\n", a->bottom->value);
-	// 	printf("size:\t%d\n", a->size);
-	// }
+	print_stack_a(a);
+	print_stack_b(b);
 
-	// printf("\n\nstack b\n");
-	// while (b->top)
-	// {
-	// 	printf("%d\t", b->top->value);
-	// 	if (b->top->next)
-	// 		b->top = b->top->next;
-	// 	else
-	// 		break ;
-	// }
-	// printf("\ntop:\t%d\n", b->top->value);
-	// printf("bottom:\t%d\n", b->bottom->value);
-	// printf("size:\t%d\n", b->size);
 	return (0);
 }
