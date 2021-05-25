@@ -21,6 +21,7 @@ SRCS =	./srcs/main.c			\
 		./srcs/ft_atoi.c		\
 		./srcs/get_max_values.c	\
 		./srcs/init_stack.c		\
+		./srcs/push_swap.c		\
 		./srcs/operations/push.c			\
 		./srcs/operations/reverse_rotate.c	\
 		./srcs/operations/rotate.c			\
