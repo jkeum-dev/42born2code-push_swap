@@ -48,6 +48,8 @@ void	get_second_big(t_stack *stack)
 	t_node	*node;
 
 	node = stack->top;
+	if (node->value == stack->big->first)
+		node = node->next;
 	stack->big->second = node->value;
 	while (node)
 	{
@@ -70,6 +72,10 @@ void	get_third_big(t_stack *stack)
 	t_node	*node;
 
 	node = stack->top;
+	if (node->value == stack->big->first || node->value == stack->big->second)
+		node = node->next;
+	if (node->value == stack->big->first || node->value == stack->big->second)
+		node = node->next;	
 	stack->big->third = node->value;
 	while (node)
 	{
