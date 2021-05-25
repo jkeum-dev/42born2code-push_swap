@@ -2,7 +2,7 @@ NAME = push_swap
 
 CC = gcc
 # CFLAGS = -Wall -Wextra -Werror
-# CFLAGS = -g3 -fsanitize=address
+CFLAGS = -g3 -fsanitize=address
 
 AR = ar
 ARFLAGS = rc
@@ -16,10 +16,11 @@ INC_DIR = ./includes
 LIBFT = libft.a
 LIBFT_DIR = ./libft
 
-SRCS =	./srcs/main.c		\
-		./srcs/check_arg.c	\
-		./srcs/ft_atoi.c	\
-		./srcs/init_stack.c	\
+SRCS =	./srcs/main.c			\
+		./srcs/check_arg.c		\
+		./srcs/ft_atoi.c		\
+		./srcs/get_cmp_value.c	\
+		./srcs/init_stack.c		\
 		./srcs/operations/push.c			\
 		./srcs/operations/reverse_rotate.c	\
 		./srcs/operations/rotate.c			\

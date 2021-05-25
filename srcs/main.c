@@ -13,6 +13,7 @@ int	main(int argc, char *argv[])
 	t_node	*a_node;
 	t_stack	*b;
 	t_node	*b_node;
+	t_cmp	*cmp;
 
 	a = init_stack();
 	a_node = make_stack(argc, argv, &a);
@@ -21,6 +22,12 @@ int	main(int argc, char *argv[])
 	check_duplicate(a_node);
 	while (a_node->prev)
 		a_node = a_node->prev;
+
+	cmp = (t_cmp *)malloc(sizeof(t_cmp));
+	get_max_value(a_node, cmp);
+	get_min_value(a_node, cmp);
+	get_mid_value(a_node, cmp);
+	printf("mid : %d\n", cmp->mid);
 
 	printf("stack a\n");
 	while (a_node)

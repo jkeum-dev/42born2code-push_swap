@@ -7,8 +7,9 @@
 
 typedef struct s_stack	t_stack;
 typedef struct s_node	t_node;
+typedef struct s_cmp	t_cmp;
 
-struct s_stack
+struct	s_stack
 {
 	int		size;
 	t_node	*top;
@@ -21,5 +22,13 @@ struct	s_node
 	t_node	*prev;
 	t_node	*next;
 };
+
+struct	s_cmp
+{
+	int	min;
+	int	mid;
+	int	max;
+};
+
 
 #endif
