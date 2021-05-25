@@ -7,13 +7,14 @@
 
 typedef struct s_stack	t_stack;
 typedef struct s_node	t_node;
-typedef struct s_cmp	t_cmp;
+typedef struct s_value	t_value;
 
 struct	s_stack
 {
 	int		size;
 	t_node	*top;
 	t_node	*bottom;
+	t_value	*big;
 };
 
 struct	s_node
@@ -23,11 +24,11 @@ struct	s_node
 	t_node	*next;
 };
 
-struct	s_cmp
+struct	s_value
 {
-	int	min;
-	int	mid;
-	int	max;
+	int	first;
+	int	second;
+	int	third;
 };
 
 
