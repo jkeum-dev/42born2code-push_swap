@@ -7,29 +7,28 @@ void	print_error(void)
 	exit(0);
 }
 
+void	set_stack_a(int argc, char **argv, t_stack *a)
+{
+	a->top = make_stack(argc, argv, a);
+	check_duplicate(a->top);
+	get_big_three_values(a);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	t_node	*a_node;
 	t_stack	*b;
-	t_node	*b_node;
 
 	a = init_stack();
-	a_node = make_stack(argc, argv, &a);
+	set_stack_a(argc, argv, a);
 	b = init_stack();
 
-	check_duplicate(a_node);
-	while (a_node->prev)
-		a_node = a_node->prev;
-
-	get_big_three_values(a);
-
 	printf("stack a\n");
-	while (a_node)
+	while (a->top)
 	{
-		printf("%d\t", a_node->value);
-		if (a_node->next)
-			a_node = a_node->next;
+		printf("%d\t", a->top->value);
+		if (a->top->next)
+			a->top = a->top->next;
 		else
 			break ;
 	}
@@ -39,21 +38,20 @@ int	main(int argc, char *argv[])
 
 	// push_stack(a, b, B);
 	// push_stack(a, b, B);
-	// b_node = b->top;
 	// // swap_stack(b, B);
 	// // rotate_all_stack(a, b, ALL);
 	// reverse_rotate_all_stack(a, b, ALL);
 
-	// while (a_node->prev)
-	// 	a_node = a_node->prev;
-	// while (b_node->prev)
-	// 	b_node = b_node->prev;
+	// while (a->top->prev)
+	// 	a->top = a->top->prev;
+	// while (b->top->prev)
+	// 	b->top = b->top->prev;
 	// printf("\n\nstack a\n");
-	// while (a_node)
+	// while (a->top)
 	// {
-	// 	printf("%d\t", a_node->value);
-	// 	if (a_node->next)
-	// 		a_node = a_node->next;
+	// 	printf("%d\t", a->top->value);
+	// 	if (a->top->next)
+	// 		a->top = a->top->next;
 	// 	else
 	// 		break ;
 	// }
@@ -65,11 +63,11 @@ int	main(int argc, char *argv[])
 	// }
 
 	// printf("\n\nstack b\n");
-	// while (b_node)
+	// while (b->top)
 	// {
-	// 	printf("%d\t", b_node->value);
-	// 	if (b_node->next)
-	// 		b_node = b_node->next;
+	// 	printf("%d\t", b->top->value);
+	// 	if (b->top->next)
+	// 		b->top = b->top->next;
 	// 	else
 	// 		break ;
 	// }
