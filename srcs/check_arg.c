@@ -67,4 +67,6 @@ void	check_duplicate(t_node *a)
 		}
 		a = a->next;
 	}
+	while (a->prev)
+		a = a->prev;
 }
