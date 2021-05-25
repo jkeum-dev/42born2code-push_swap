@@ -19,7 +19,7 @@ LIBFT_DIR = ./libft
 SRCS =	./srcs/main.c			\
 		./srcs/check_arg.c		\
 		./srcs/ft_atoi.c		\
-		./srcs/get_cmp_value.c	\
+		./srcs/get_max_values.c	\
 		./srcs/init_stack.c		\
 		./srcs/operations/push.c			\
 		./srcs/operations/reverse_rotate.c	\
