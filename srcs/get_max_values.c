@@ -1,51 +1,61 @@
 #include "push_swap.h"
 
-void	get_mid_value(t_node *node, t_cmp *cmp)
-{
-	int		num;
-	int		sub;
-	int		sub_next;
-	t_node	*temp;
+/*
+**	void	get_min_value(t_node *node, t_cmp *cmp)
+**	{
+**		cmp->min = node->value;
+**		while (node)
+**		{
+**			if (cmp->min > node->value)
+**				cmp->min = node->value;
+**			if (node->next)
+**				node = node->next;
+**			else
+**				break ;
+**		}
+**		while (node->prev)
+**			node = node->prev;
+**	}
+*/
 
-	if (!node->next)
+void	get_max_value(t_stack *stack)
+{
+	t_node	*node;
+
+	if (!stack->big)
 	{
-		cmp->mid = node->value;
-		return ;
+		stack->big = (t_value *)malloc(sizeof(t_value));
+		if (!stack->big)
+			return ;
 	}
-	num = (cmp->max + cmp->min) / 2;
-	sub = node->value - num;
-	temp = node;
+	node = stack->top;
+	stack->big->first = node->value;
 	while (node)
 	{
-		if (sub < 0)
-			sub *= -1;
+		if (stack->big->first < node->value)
+			stack->big->first = node->value;
 		if (node->next)
+			node = node->next;
+		else
+			break ;
+	}
+	while (node->prev)
+		node = node->prev;
+}
+
+void	get_second_big(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;
+	stack->big->second = node->value;
+	while (node)
+	{
+		if (stack->big->first != node->value)
 		{
-			sub_next = node->next->value - num;
-			if (sub_next < 0)
-				sub_next *= -1;
-			if (sub > sub_next)
-			{
-				sub = node->next->value - num;
-				temp = node->next;
-			}
-			node = node->next;
+			if (stack->big->second < node->value)
+				stack->big->second = node->value;
 		}
-		else
-			break ;
-	}
-	while (node->prev)
-		node = node->prev;
-	cmp->mid = temp->value;
-}
-
-void	get_min_value(t_node *node, t_cmp *cmp)
-{
-	cmp->min = node->value;
-	while (node)
-	{
-		if (cmp->min > node->value)
-			cmp->min = node->value;
 		if (node->next)
 			node = node->next;
 		else
@@ -55,13 +65,20 @@ void	get_min_value(t_node *node, t_cmp *cmp)
 		node = node->prev;
 }
 
-void	get_max_value(t_node *node, t_cmp *cmp)
+void	get_third_big(t_stack *stack)
 {
-	cmp->max = node->value;
+	t_node	*node;
+
+	node = stack->top;
+	stack->big->third = node->value;
 	while (node)
 	{
-		if (cmp->max < node->value)
-			cmp->max = node->value;
+		if (stack->big->first != node->value &&
+		stack->big->second != node->value)
+		{
+			if (stack->big->third < node->value)
+				stack->big->third = node->value;
+		}
 		if (node->next)
 			node = node->next;
 		else
@@ -69,4 +86,16 @@ void	get_max_value(t_node *node, t_cmp *cmp)
 	}
 	while (node->prev)
 		node = node->prev;
+}
+
+void	get_big_three_values(t_stack *stack)
+{
+	if (stack->size < 3)
+		return ;
+	stack->big = (t_value *)malloc(sizeof(t_value));
+	if (!stack->big)
+		return ;
+	get_max_value(stack);
+	get_second_big(stack);
+	get_third_big(stack);
 }
