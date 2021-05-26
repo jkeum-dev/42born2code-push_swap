@@ -67,41 +67,13 @@ void	get_second_big(t_stack *stack)
 		node = node->prev;
 }
 
-void	get_third_big(t_stack *stack)
+void	get_big_two_values(t_stack *stack)
 {
-	t_node	*node;
-
-	node = stack->top;
-	if (node->value == stack->big->first || node->value == stack->big->second)
-		node = node->next;
-	if (node->value == stack->big->first || node->value == stack->big->second)
-		node = node->next;	
-	stack->big->third = node->value;
-	while (node)
-	{
-		if (stack->big->first != node->value &&
-		stack->big->second != node->value)
-		{
-			if (stack->big->third < node->value)
-				stack->big->third = node->value;
-		}
-		if (node->next)
-			node = node->next;
-		else
-			break ;
-	}
-	while (node->prev)
-		node = node->prev;
-}
-
-void	get_big_three_values(t_stack *stack)
-{
-	if (stack->size < 3)
+	if (stack->size < 2)
 		return ;
 	stack->big = (t_value *)malloc(sizeof(t_value));
 	if (!stack->big)
 		return ;
 	get_max_value(stack);
 	get_second_big(stack);
-	get_third_big(stack);
 }
