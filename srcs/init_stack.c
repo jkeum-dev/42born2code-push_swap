@@ -41,9 +41,34 @@ static void	connect_list(t_node **temp, t_node **node, t_stack **stack)
 	}
 }
 
+int		set_node(char *argv, t_node **node, t_stack **stack)
+{
+	int		i;
+	char	**arg;
+	t_node	*temp;
+
+	arg = ft_split(argv, ' ');
+	if (!arg)
+		return (0);
+	i = -1;
+	while (arg[++i])
+	{
+		temp = init_node();
+		if (!temp)
+			return (0);
+		temp->value = ft_atoi(arg[i]);
+		connect_list(&temp, node, stack);
+		(*stack)->size++;
+		free(arg[i]);
+	}
+	free(arg);
+	return (1);
+}
+
 t_node	*make_stack(int argc, char **argv, t_stack **stack)
 {
 	int		i;
+	int		ret;
 	t_node	*temp;
 	t_node	*node;
 
@@ -51,15 +76,12 @@ t_node	*make_stack(int argc, char **argv, t_stack **stack)
 	node = NULL;
 	while (++i < argc)
 	{
-		temp = init_node();
-		temp->value = ft_atoi(argv[i]);
-		if (!temp)
-			return (NULL);
-		connect_list(&temp, &node, stack);
-		(*stack)->size++;
-		if (i == argc - 1)
-			(*stack)->bottom = node;
+		ret = set_node(argv[i], &node, stack);
+		if (!ret)
+			print_error();
 	}
+	if (!node->next)
+		(*stack)->bottom = node;
 	while (node->prev)
 		node = node->prev;
 	return (node);
