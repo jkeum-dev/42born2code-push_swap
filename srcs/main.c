@@ -11,7 +11,7 @@ void	set_stack_a(int argc, char **argv, t_stack **a)
 {
 	(*a)->top = make_stack(argc, argv, a);
 	check_duplicate((*a)->top);
-	get_big_three_values(*a);
+	get_big_two_values(*a);
 }
 
 void	print_stack_a(t_stack *a)
@@ -67,7 +67,7 @@ int	main(int argc, char *argv[])
 
 	print_stack_a(a);
 
-	push_swap(a, b);
+	// push_swap(a, b);
 
 	// push_stack(a, b, B);
 	// push_stack(a, b, B);
@@ -75,8 +75,8 @@ int	main(int argc, char *argv[])
 	// // rotate_all_stack(a, b, ALL);
 	// reverse_rotate_all_stack(a, b, ALL);
 
-	print_stack_a(a);
-	print_stack_b(b);
+	// print_stack_a(a);
+	// print_stack_b(b);
 
 	return (0);
 }
