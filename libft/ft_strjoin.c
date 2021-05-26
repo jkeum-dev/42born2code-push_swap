@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 06:05:01 by jkeum             #+#    #+#             */
-/*   Updated: 2020/10/24 17:01:28 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/05/26 17:07:33 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	while (i < s1_len)
-	{
-		res[i] = s1[i];
-		i++;
-	}
+		res[i] = s1[i++];
 	j = 0;
 	while (j < s2_len)
 	{
