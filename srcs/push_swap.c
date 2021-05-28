@@ -1,17 +1,11 @@
 #include "push_swap.h"
 
-t_value	*init_value(void)
+void	init_value(t_value *var)
 {
-	t_value *var;
-
-	var = (t_value *)malloc(sizeof(t_value));
-	if (!var)
-		return (NULL);
 	var->ra = 0;
 	var->rb = 0;
 	var->pa = 0;
 	var->pb = 0;
-	return (var);
 }
 
 void	select_pivot(int r, t_stack *stack, t_value *var)
@@ -27,7 +21,8 @@ void	select_pivot(int r, t_stack *stack, t_value *var)
 
 void	push_swap(t_stack *a, t_stack *b)
 {
-	t_value *var;
+	int	r;
 
-	var = init_value();
+	r = a->size;
+	a_to_b(r, a, b);
 }
