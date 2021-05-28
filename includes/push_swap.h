@@ -13,8 +13,8 @@ int		ft_atoi(char *arg);
 t_stack	*init_stack(void);
 t_node	*init_node(void);
 t_node	*make_stack(int argc, char **argv, t_stack **stack);
-void	get_max_value(t_stack *stack);
-void	get_big_two_values(t_stack *stack);
+int		get_min_value(t_node *node, int size);
+int		get_max_value(t_node *node, int size);
 
 void	swap_stack(t_stack *stack, int flag);
 void	swap_all_stack(t_stack *a, t_stack *b, int flag);
