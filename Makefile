@@ -19,9 +19,13 @@ LIBFT_DIR = ./libft
 SRCS =	./srcs/main.c			\
 		./srcs/check_arg.c		\
 		./srcs/ft_atoi.c		\
-		./srcs/get_max_values.c	\
+		./srcs/get_max_min_value.c	\
+		./srcs/handle_under_three.c	\
 		./srcs/init_stack.c		\
 		./srcs/push_swap.c		\
+		./srcs/sort_a_to_b.c		\
+		./srcs/sort_arg_three.c		\
+		./srcs/sort_b_to_a.c		\
 		./srcs/operations/push.c			\
 		./srcs/operations/reverse_rotate.c	\
 		./srcs/operations/rotate.c			\
