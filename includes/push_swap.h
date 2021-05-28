@@ -25,5 +25,10 @@ void	reverse_rotate_stack(t_stack *stack, int flag);
 void	reverse_rotate_all_stack(t_stack *a, t_stack *b, int flag);
 
 void	push_swap(t_stack *a, t_stack *b);
+void	handle_arg_three_a(int r, t_stack *stack);
+void	handle_arg_three_b(int r, t_stack *a, t_stack *b);
+void	handle_under_three(int r, t_stack *a, t_stack *b, int flag);
+void	a_to_b(int r, t_stack *a, t_stack *b);
+void	b_to_a(int r, t_stack *a, t_stack *b);
 
 #endif
