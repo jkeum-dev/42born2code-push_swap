@@ -14,7 +14,6 @@ struct	s_stack
 	int		size;
 	t_node	*top;
 	t_node	*bottom;
-	t_value	*big;
 };
 
 struct	s_node
@@ -26,9 +25,12 @@ struct	s_node
 
 struct	s_value
 {
-	int	first;
-	int	second;
-	int	third;
+	int	piv_big;
+	int	piv_small;
+	int	ra;
+	int	rb;
+	int	pa;
+	int	pb;
 };
 
 
