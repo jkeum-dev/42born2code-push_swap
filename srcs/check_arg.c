@@ -36,7 +36,7 @@ static int	is_numeric(char *arg)
 	return (1);
 }
 
-int	check_arg(char *arg)
+int			check_arg(char *arg)
 {
 	int	len;
 
@@ -47,7 +47,7 @@ int	check_arg(char *arg)
 		return (1);
 }
 
-void	check_duplicate(t_node *a)
+void		check_duplicate(t_node *a)
 {
 	int		cur_value;
 	t_node	*temp;
