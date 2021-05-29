@@ -55,7 +55,7 @@ int		set_node(char *argv, t_node **node, t_stack **stack)
 	{
 		temp = init_node();
 		if (!temp)
-			return (0);
+			print_error();
 		temp->value = ft_atoi(arg[i]);
 		connect_list(&temp, node, stack);
 		(*stack)->size++;
