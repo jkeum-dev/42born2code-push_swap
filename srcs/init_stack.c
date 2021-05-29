@@ -69,7 +69,6 @@ t_node	*make_stack(int argc, char **argv, t_stack **stack)
 {
 	int		i;
 	int		ret;
-	t_node	*temp;
 	t_node	*node;
 
 	i = 0;
