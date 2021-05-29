@@ -8,7 +8,10 @@ void	b_to_a(int r, t_stack *a, t_stack *b)
 	t_value	var;
 
 	if (r <= 3)
+	{
 		handle_under_three(r, a, b, B);
+		return ;
+	}
 	init_value(&var);
 	select_pivot(r, b, &var);
 	r_temp = r;
