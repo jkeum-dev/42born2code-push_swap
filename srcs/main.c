@@ -3,7 +3,7 @@
 
 void	print_error(void)
 {
-	ft_putendl_fd("Error", 1);
+	ft_putendl_fd("Error", 2);
 	exit(0);
 }
 
@@ -64,7 +64,7 @@ int	main(int argc, char *argv[])
 	set_stack_a(argc, argv, &a);
 	b = init_stack();
 
-	print_stack_a(a);
+	// print_stack_a(a);
 
 	push_swap(a, b);
 
@@ -74,8 +74,8 @@ int	main(int argc, char *argv[])
 	// // rotate_all_stack(a, b, ALL);
 	// reverse_rotate_all_stack(a, b, ALL);
 
-	print_stack_a(a);
+	// print_stack_a(a);
 	// print_stack_b(b);
-
+	free_all(a);
 	return (0);
 }
