@@ -74,8 +74,8 @@ int	main(int argc, char *argv[])
 	// // rotate_all_stack(a, b, ALL);
 	// reverse_rotate_all_stack(a, b, ALL);
 
-	// print_stack_a(a);
+	print_stack_a(a);
 	// print_stack_b(b);
-	free_all(a);
+	free_all(a, b);
 	return (0);
 }
