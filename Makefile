@@ -1,8 +1,8 @@
 NAME = push_swap
 
 CC = gcc
-# CFLAGS = -Wall -Wextra -Werror
-CFLAGS = -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -g3 -fsanitize=address
 
 AR = ar
 ARFLAGS = rc
