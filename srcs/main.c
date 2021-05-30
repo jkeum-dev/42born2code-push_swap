@@ -86,10 +86,12 @@ int	main(int argc, char *argv[])
 	t_stack	*b;
 
 	a = init_stack();
-	set_stack_a(argc, argv, &a);
+	a->top = make_stack(argc, argv, &a);
+	check_duplicate(a->top);
+	// set_stack_a(argc, argv, &a);
 	b = init_stack();
 
-	print_stack_a(a);
+	// print_stack_a(a);
 	if (is_sorted(a))
 		return (0);
 	push_swap(a, b);
@@ -101,7 +103,7 @@ int	main(int argc, char *argv[])
 	// rotate_all_stack(a, b, ALL);
 	// reverse_rotate_all_stack(a, b, ALL);
 
-	print_stack_a(a);
+	// print_stack_a(a);
 	// printf("top next: %d\n", a->top->next->value);
 	// printf("bottom prev: %d\n", a->bottom->prev->value);
 	// if (a->top->prev == NULL)
