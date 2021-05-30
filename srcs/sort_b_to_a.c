@@ -7,6 +7,8 @@ void	b_to_a(int r, t_stack *a, t_stack *b)
 	int		rem;
 	t_value	var;
 
+	print_stack_a(a);
+	print_stack_b(b);
 	if (r <= 3)
 	{
 		handle_under_three(r, a, b, B);
@@ -14,6 +16,12 @@ void	b_to_a(int r, t_stack *a, t_stack *b)
 	}
 	init_value(&var);
 	select_pivot(r, b, &var);
+	ft_putstr_fd("pivot big: ", 1);
+	ft_putnbr_fd(var.piv_big, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("pivot small: ", 1);
+	ft_putnbr_fd(var.piv_small, 1);
+	ft_putchar_fd('\n', 1);
 	r_temp = r;
 	while (r_temp--)
 	{
@@ -52,6 +60,6 @@ void	b_to_a(int r, t_stack *a, t_stack *b)
 		while (rem--)
 			reverse_rotate_stack(b, B);
 	}
-	a_to_b(var.rb, a, b);
-	b_to_a(var.ra, a, b);
+	a_to_b(var.ra, a, b);
+	b_to_a(var.rb, a, b);
 }
