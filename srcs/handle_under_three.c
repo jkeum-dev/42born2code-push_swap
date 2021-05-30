@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-static void	handle_arg_two(t_stack *a, t_stack *b, int flag)
+void	handle_arg_two(t_stack *a, t_stack *b, int flag)
 {
 	if (flag == A)
 	{
@@ -16,7 +16,7 @@ static void	handle_arg_two(t_stack *a, t_stack *b, int flag)
 	}
 }
 
-void		handle_under_three(int r, t_stack *a, t_stack *b, int flag)
+void	handle_under_three(int r, t_stack *a, t_stack *b, int flag)
 {
 	if (r == 3)
 	{
