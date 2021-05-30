@@ -7,8 +7,8 @@ void	b_to_a(int r, t_stack *a, t_stack *b)
 	int		rem;
 	t_value	var;
 
-	print_stack_a(a);
-	print_stack_b(b);
+	// print_stack_a(a);
+	// print_stack_b(b);
 	if (r <= 3)
 	{
 		handle_under_three(r, a, b, B);
@@ -16,12 +16,12 @@ void	b_to_a(int r, t_stack *a, t_stack *b)
 	}
 	init_value(&var);
 	select_pivot(r, b, &var);
-	ft_putstr_fd("pivot big: ", 1);
-	ft_putnbr_fd(var.piv_big, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putstr_fd("pivot small: ", 1);
-	ft_putnbr_fd(var.piv_small, 1);
-	ft_putchar_fd('\n', 1);
+	// ft_putstr_fd("pivot big: ", 1);
+	// ft_putnbr_fd(var.piv_big, 1);
+	// ft_putchar_fd('\n', 1);
+	// ft_putstr_fd("pivot small: ", 1);
+	// ft_putnbr_fd(var.piv_small, 1);
+	// ft_putchar_fd('\n', 1);
 	r_temp = r;
 	while (r_temp--)
 	{
@@ -34,7 +34,7 @@ void	b_to_a(int r, t_stack *a, t_stack *b)
 		{
 			push_stack(b, a, A);
 			var.pa++;
-			if (b->top->value < var.piv_big)
+			if (a->top->value < var.piv_big)
 			{
 				rotate_stack(a, A);
 				var.ra++;
