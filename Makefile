@@ -1,12 +1,12 @@
 NAME = push_swap
 
 CC = gcc
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 # CFLAGS = -g3 -fsanitize=address
 
-ifeq ($(DEBUG),true)
-	CFLAGS += -g
-endif
+# ifeq ($(DEBUG),true)
+# 	CFLAGS += -g
+# endif
 
 AR = ar
 ARFLAGS = rc

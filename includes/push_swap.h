@@ -34,4 +34,7 @@ void	a_to_b(int r, t_stack *a, t_stack *b);
 void	b_to_a(int r, t_stack *a, t_stack *b);
 void	free_all(t_stack *a, t_stack *b);
 
+void	print_stack_a(t_stack *a);
+void	print_stack_b(t_stack *b);
+
 #endif
