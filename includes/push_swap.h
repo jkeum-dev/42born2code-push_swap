@@ -29,6 +29,8 @@ void	push_swap(t_stack *a, t_stack *b);
 void	handle_arg_three_a(int r, t_stack *a);
 void	handle_arg_three_b(int r, t_stack *a, t_stack *b);
 void	handle_under_three(int r, t_stack *a, t_stack *b, int flag);
+void	handle_arg_two(t_stack *a, t_stack *b, int flag);
+void	handle_arg_five(t_stack *a, t_stack *b);
 void	select_pivot(int r, t_stack *stack, t_value *var);
 void	a_to_b(int r, t_stack *a, t_stack *b);
 void	b_to_a(int r, t_stack *a, t_stack *b);
