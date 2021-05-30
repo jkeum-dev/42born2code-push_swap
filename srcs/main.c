@@ -13,6 +13,29 @@ void	set_stack_a(int argc, char **argv, t_stack **a)
 	check_duplicate((*a)->top);
 }
 
+int		is_sorted(t_stack *a)
+{
+	t_node	*node;
+
+	node = a->top;
+	while (node)
+	{
+		if (node->next)
+		{
+			if (node->value > node->next->value)
+				return (0);
+		}
+		if (node->next)
+			node = node->next;
+		else
+			break ;
+	}
+	if (node->value == a->bottom->value)
+		return (1);
+	else
+		return (0);
+}
+
 void	print_stack_a(t_stack *a)
 {
 	printf("\n\nstack a\n");
@@ -37,6 +60,8 @@ void	print_stack_a(t_stack *a)
 void	print_stack_b(t_stack *b)
 {
 	printf("\n\nstack b\n");
+	if (!b->top)
+		return ;
 	while (b->top)
 	{
 		printf("%d\t", b->top->value);
@@ -64,18 +89,32 @@ int	main(int argc, char *argv[])
 	set_stack_a(argc, argv, &a);
 	b = init_stack();
 
-	// print_stack_a(a);
-
+	print_stack_a(a);
+	if (is_sorted(a))
+		return (0);
 	push_swap(a, b);
 
 	// push_stack(a, b, B);
 	// push_stack(a, b, B);
-	// // swap_stack(b, B);
-	// // rotate_all_stack(a, b, ALL);
+	// push_stack(a, b, B);
+	// swap_all_stack(a, b, ALL);
+	// rotate_all_stack(a, b, ALL);
 	// reverse_rotate_all_stack(a, b, ALL);
 
 	print_stack_a(a);
+	// printf("top next: %d\n", a->top->next->value);
+	// printf("bottom prev: %d\n", a->bottom->prev->value);
+	// if (a->top->prev == NULL)
+	// 	printf("top prev : NULL\n");
+	// if (a->bottom->next == NULL)
+	// 	printf("bottom next : NULL\n");
 	// print_stack_b(b);
+	// printf("top next: %d\n", b->top->next->value);
+	// printf("bottom prev: %d\n", b->bottom->prev->value);
+	// if (b->top->prev == NULL)
+	// 	printf("top prev : NULL\n");
+	// if (b->bottom->next == NULL)
+	// 	printf("bottom next : NULL\n");
 	free_all(a, b);
 	return (0);
 }
