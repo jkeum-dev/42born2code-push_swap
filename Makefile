@@ -29,6 +29,7 @@ SRCS =	./srcs/main.c			\
 		./srcs/init_stack.c		\
 		./srcs/push_swap.c		\
 		./srcs/sort_a_to_b.c	\
+		./srcs/sort_arg_five.c	\
 		./srcs/sort_arg_three_a.c	\
 		./srcs/sort_arg_three_b.c	\
 		./srcs/sort_b_to_a.c		\
