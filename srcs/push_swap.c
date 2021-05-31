@@ -21,8 +21,11 @@ void	select_pivot(int r, t_stack *stack, t_value *var)
 
 void	push_swap(t_stack *a, t_stack *b)
 {
+	int	cnt;
+
+	cnt = 0;
 	if (a->size == 5)
 		handle_arg_five(a, b);
 	else
-		a_to_b(a->size, a, b);
+		a_to_b(a->size, a, b, &cnt);
 }
