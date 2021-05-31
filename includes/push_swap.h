@@ -31,9 +31,10 @@ void	handle_arg_three_b(int r, t_stack *a, t_stack *b);
 void	handle_under_three(int r, t_stack *a, t_stack *b, int flag);
 void	handle_arg_two(t_stack *a, t_stack *b, int flag);
 void	handle_arg_five(t_stack *a, t_stack *b);
+void	hanlde_sort_five(int size, t_stack *a, t_stack *b, int flag);
 void	select_pivot(int r, t_stack *stack, t_value *var);
-void	a_to_b(int r, t_stack *a, t_stack *b);
-void	b_to_a(int r, t_stack *a, t_stack *b);
+void	a_to_b(int r, t_stack *a, t_stack *b, int *cnt);
+void	b_to_a(int r, t_stack *a, t_stack *b, int *cnt);
 void	free_all(t_stack *a, t_stack *b);
 
 void	print_stack_a(t_stack *a);
