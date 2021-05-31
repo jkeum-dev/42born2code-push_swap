@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	a_to_b(int r, t_stack *a, t_stack *b)
+void	a_to_b(int r, t_stack *a, t_stack *b, int *cnt)
 {
 	int		r_temp;
 	int		rrr;
@@ -12,12 +12,17 @@ void	a_to_b(int r, t_stack *a, t_stack *b)
 		handle_under_three(r, a, b, A);
 		return ;
 	}
+	if (r == 5)
+	{
+		hanlde_sort_five(5, a, b, A);
+		return ;
+	}
 	init_value(&var);
 	select_pivot(r, a, &var);
 	r_temp = r;
 	while (r_temp--)
 	{
-		if (a->top->value >= var.piv_big)
+		if (a->top->value > var.piv_big)
 		{
 			rotate_stack(a, A);
 			var.ra++;
@@ -26,7 +31,7 @@ void	a_to_b(int r, t_stack *a, t_stack *b)
 		{
 			push_stack(a, b, B);
 			var.pb++;
-			if (b->top->value >= var.piv_small)
+			if (b->top->value > var.piv_small)
 			{
 				rotate_stack(b, B);
 				var.rb++;
@@ -37,21 +42,37 @@ void	a_to_b(int r, t_stack *a, t_stack *b)
 	{
 		rrr = var.rb;
 		rem = var.ra - rrr;
-		while (rrr--)
-			reverse_rotate_all_stack(a, b, ALL);
-		while (rem--)
-			reverse_rotate_stack(a, A);
+		if ((*cnt) > 0)
+		{
+			while (rrr--)
+				reverse_rotate_all_stack(a, b, ALL);
+			while (rem--)
+				reverse_rotate_stack(a, A);
+		}
+		else
+		{
+			while (rrr--)
+				reverse_rotate_stack(b, B);
+		}
 	}
 	else
 	{
 		rrr = var.ra;
 		rem = var.rb - rrr;
-		while (rrr--)
-			reverse_rotate_all_stack(a, b, ALL);
-		while (rem--)
-			reverse_rotate_stack(b, B);
+		if ((*cnt) > 0)
+		{
+			while (rrr--)
+				reverse_rotate_all_stack(a, b, ALL);
+			while (rem--)
+				reverse_rotate_stack(b, B);
+		}
+		else
+		{
+			while (rrr--)
+				reverse_rotate_stack(a, A);
+		}
 	}
-	a_to_b(var.ra, a, b);
-	b_to_a(var.rb, a, b);
-	b_to_a(var.pb - var.rb, a, b);
+	a_to_b(var.ra, a, b, cnt);
+	b_to_a(var.rb, a, b, cnt);
+	b_to_a(var.pb - var.rb, a, b, cnt);
 }
