@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/05 16:31:01 by jkeum             #+#    #+#             */
+/*   Updated: 2021/06/05 16:33:48 by jkeum            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_atoi(char *arg)
@@ -19,7 +31,7 @@ int	ft_atoi(char *arg)
 	while (arg[i])
 		value = value * 10 + (arg[i++] - '0');
 	value = value * sign;
-	if (value > INT32_MAX || value < INT32_MIN)
+	if (value > MAX_INT || value < MIN_INT)
 		print_error();
 	return (value);
 }
