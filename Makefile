@@ -46,7 +46,11 @@ vpath %.c $(SRCS_DIR)
 
 RM = rm -f
 
-all: $(NAME)
+all : $(NAME)
+
+bonus : all
+	@$(MAKE) -C ./checker
+	@cp ./checker/checker ./checker
 
 $(NAME) : $(OBJS)
 	@$(MAKE) -C $(LIBFT_DIR)
@@ -61,8 +65,10 @@ $(OBJS_DIR)/%.o : %.c | $(OBJS_DIR)
 clean :
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 	@$(RM) -r $(OBJS_DIR)
+	@$(RM) ./checker
 
 fclean : clean
 	@$(RM) $(NAME)
+	@$(RM) ./checker/checker
 
 re : fclean all
