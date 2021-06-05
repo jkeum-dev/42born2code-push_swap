@@ -1,5 +1,5 @@
 #include "push_swap.h"
-#include <stdio.h>
+// #include <stdio.h>
 
 int		is_sorted(t_stack *a)
 {
