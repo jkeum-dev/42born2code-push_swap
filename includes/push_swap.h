@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/05 17:56:20 by jkeum             #+#    #+#             */
+/*   Updated: 2021/06/05 17:56:21 by jkeum            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -11,11 +23,11 @@ int		check_arg(char *arg);
 void	check_duplicate(t_node *a);
 int		ft_atoi(char *arg);
 t_stack	*init_stack(void);
-t_node	*init_node(void);
 t_node	*make_stack(int argc, char **argv, t_stack **stack);
 void	init_value(t_value *var);
 int		get_min_value(t_node *node, int size);
 int		get_max_value(t_node *node, int size);
+int		get_mid_value_five(t_node *node);
 
 void	swap_stack(t_stack *stack, int flag);
 void	swap_all_stack(t_stack *a, t_stack *b, int flag);
