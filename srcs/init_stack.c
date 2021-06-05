@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/05 16:37:47 by jkeum             #+#    #+#             */
+/*   Updated: 2021/06/05 16:39:18 by jkeum            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_stack	*init_stack(void)
+t_stack			*init_stack(void)
 {
 	t_stack	*stack;
 
@@ -13,7 +25,7 @@ t_stack	*init_stack(void)
 	return (stack);
 }
 
-t_node	*init_node(void)
+static t_node	*init_node(void)
 {
 	t_node	*node;
 
@@ -26,7 +38,7 @@ t_node	*init_node(void)
 	return (node);
 }
 
-static void	connect_list(t_node **temp, t_node **node, t_stack **stack)
+static void		connect_list(t_node **temp, t_node **node, t_stack **stack)
 {
 	if (!*node)
 	{
@@ -41,7 +53,7 @@ static void	connect_list(t_node **temp, t_node **node, t_stack **stack)
 	}
 }
 
-int		set_node(char *argv, t_node **node, t_stack **stack)
+static int		set_node(char *argv, t_node **node, t_stack **stack)
 {
 	int		i;
 	char	**arg;
@@ -65,7 +77,7 @@ int		set_node(char *argv, t_node **node, t_stack **stack)
 	return (1);
 }
 
-t_node	*make_stack(int argc, char **argv, t_stack **stack)
+t_node			*make_stack(int argc, char **argv, t_stack **stack)
 {
 	int		i;
 	int		ret;
