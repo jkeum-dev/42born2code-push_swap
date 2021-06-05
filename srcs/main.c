@@ -1,18 +1,6 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void	print_error(void)
-{
-	ft_putendl_fd("Error", 2);
-	exit(0);
-}
-
-void	set_stack_a(int argc, char **argv, t_stack **a)
-{
-	(*a)->top = make_stack(argc, argv, a);
-	check_duplicate((*a)->top);
-}
-
 int		is_sorted(t_stack *a)
 {
 	t_node	*node;
@@ -88,20 +76,11 @@ int	main(int argc, char *argv[])
 	a = init_stack();
 	a->top = make_stack(argc, argv, &a);
 	check_duplicate(a->top);
-	// set_stack_a(argc, argv, &a);
 	b = init_stack();
 
-	// print_stack_a(a);
 	if (is_sorted(a))
 		return (0);
 	push_swap(a, b);
-
-	// push_stack(a, b, B);
-	// push_stack(a, b, B);
-	// push_stack(a, b, B);
-	// swap_all_stack(a, b, ALL);
-	// rotate_all_stack(a, b, ALL);
-	// reverse_rotate_all_stack(a, b, ALL);
 
 	// print_stack_a(a);
 	// printf("top next: %d\n", a->top->next->value);
