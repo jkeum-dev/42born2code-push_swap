@@ -11,7 +11,8 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rc
 
-SRCS_DIR = 
+SRCS_DIR =	./srcs		\
+			./srcs/gnl	\
 
 OBJS_DIR = ./objs
 INC_DIR = ./includes
@@ -19,7 +20,8 @@ INC_DIR = ./includes
 LIBFT = libft.a
 LIBFT_DIR = ../libft
 
-SRCS = 
+SRCS =	./srcs/gnl/get_next_line_bonus.c		\
+		./srcs/gnl/get_next_line_utils_bonus.c	\
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
