@@ -79,11 +79,9 @@ int	main(int argc, char *argv[])
 		a->top = make_stack(argc, argv, &a);
 		check_duplicate(a->top);
 		b = init_stack();
-
 		if (is_sorted(a))
 			return (0);
 		push_swap(a, b);
-
 		// print_stack_a(a);
 		// printf("top next: %d\n", a->top->next->value);
 		// printf("bottom prev: %d\n", a->bottom->prev->value);
