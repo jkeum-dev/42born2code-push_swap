@@ -30,4 +30,6 @@ void	do_swap(char *buf, t_stack *a, t_stack *b);
 void	do_rotate(char *buf, t_stack *a, t_stack *b);
 void	do_reverse_rotate(char *buf, t_stack *a, t_stack *b);
 
+void	free_all(t_stack *a, t_stack *b);
+
 #endif
