@@ -33,7 +33,8 @@ SRCS =	./srcs/gnl/get_next_line_bonus.c		\
 		./srcs/pre_settings/init_stack.c	\
 		./srcs/main.c			\
 		./srcs/checker.c		\
-		./srcs/do_operations.c
+		./srcs/do_operations.c	\
+		./srcs/free.c
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
