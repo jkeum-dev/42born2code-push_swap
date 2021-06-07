@@ -73,29 +73,32 @@ int	main(int argc, char *argv[])
 	t_stack	*a;
 	t_stack	*b;
 
-	a = init_stack();
-	a->top = make_stack(argc, argv, &a);
-	check_duplicate(a->top);
-	b = init_stack();
+	if (argc > 1)
+	{
+		a = init_stack();
+		a->top = make_stack(argc, argv, &a);
+		check_duplicate(a->top);
+		b = init_stack();
 
-	if (is_sorted(a))
-		return (0);
-	push_swap(a, b);
+		if (is_sorted(a))
+			return (0);
+		push_swap(a, b);
 
-	// print_stack_a(a);
-	// printf("top next: %d\n", a->top->next->value);
-	// printf("bottom prev: %d\n", a->bottom->prev->value);
-	// if (a->top->prev == NULL)
-	// 	printf("top prev : NULL\n");
-	// if (a->bottom->next == NULL)
-	// 	printf("bottom next : NULL\n");
-	// print_stack_b(b);
-	// printf("top next: %d\n", b->top->next->value);
-	// printf("bottom prev: %d\n", b->bottom->prev->value);
-	// if (b->top->prev == NULL)
-	// 	printf("top prev : NULL\n");
-	// if (b->bottom->next == NULL)
-	// 	printf("bottom next : NULL\n");
-	free_all(a, b);
+		// print_stack_a(a);
+		// printf("top next: %d\n", a->top->next->value);
+		// printf("bottom prev: %d\n", a->bottom->prev->value);
+		// if (a->top->prev == NULL)
+		// 	printf("top prev : NULL\n");
+		// if (a->bottom->next == NULL)
+		// 	printf("bottom next : NULL\n");
+		// print_stack_b(b);
+		// printf("top next: %d\n", b->top->next->value);
+		// printf("bottom prev: %d\n", b->bottom->prev->value);
+		// if (b->top->prev == NULL)
+		// 	printf("top prev : NULL\n");
+		// if (b->bottom->next == NULL)
+		// 	printf("bottom next : NULL\n");
+		free_all(a, b);
+	}
 	return (0);
 }
