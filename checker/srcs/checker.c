@@ -1,6 +1,6 @@
 #include "checker.h"
 
-int	check_operations(char *buf, t_stack *a, t_stack *b)
+void	check_operations(char *buf, t_stack *a, t_stack *b)
 {
 	if (!ft_strcmp("pa", buf) || !ft_strcmp("pb", buf))
 		do_push(buf, a, b);
@@ -20,6 +20,7 @@ void	checker(t_stack *a, t_stack *b)
 
 	while (get_next_line(0, &buf) > 0)
 	{
-		check_operation(buf, a, b);
+		check_operations(buf, a, b);
+		free(buf);
 	}
 }
