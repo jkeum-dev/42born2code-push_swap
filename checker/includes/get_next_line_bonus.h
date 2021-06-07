@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 21:58:51 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/05 19:21:39 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/06/07 15:28:47 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # endif
 
 int		get_next_line(int fd, char **line);
-int		ft_strlen(char *str);
+int		ft_strlen_gnl(char *str);
 char	*ft_strjoin_gnl(char *save, char *buff);
 
 #endif
