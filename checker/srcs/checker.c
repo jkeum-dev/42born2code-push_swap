@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/07 16:52:38 by jkeum             #+#    #+#             */
+/*   Updated: 2021/06/07 16:54:01 by jkeum            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 int		is_sorted(t_stack *a)
@@ -27,11 +39,14 @@ void	check_operations(char *buf, t_stack *a, t_stack *b)
 {
 	if (!ft_strcmp("pa", buf) || !ft_strcmp("pb", buf))
 		do_push(buf, a, b);
-	else if (!ft_strcmp("sa", buf) || !ft_strcmp("sb", buf) || !ft_strcmp("ss", buf))
+	else if (!ft_strcmp("sa", buf) || !ft_strcmp("sb", buf) ||
+	!ft_strcmp("ss", buf))
 		do_swap(buf, a, b);
-	else if (!ft_strcmp("ra", buf) || !ft_strcmp("rb", buf) || !ft_strcmp("rr", buf))
+	else if (!ft_strcmp("ra", buf) || !ft_strcmp("rb", buf) ||
+	!ft_strcmp("rr", buf))
 		do_rotate(buf, a, b);
-	else if (!ft_strcmp("rra", buf) || !ft_strcmp("rrb", buf) || !ft_strcmp("rrr", buf))
+	else if (!ft_strcmp("rra", buf) || !ft_strcmp("rrb", buf) ||
+	!ft_strcmp("rrr", buf))
 		do_reverse_rotate(buf, a, b);
 	else
 		print_error();

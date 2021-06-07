@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/07 16:52:46 by jkeum             #+#    #+#             */
+/*   Updated: 2021/06/07 16:53:39 by jkeum            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 void	print_error(void)
@@ -6,7 +18,7 @@ void	print_error(void)
 	exit(0);
 }
 
-int	main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	t_stack *a;
 	t_stack	*b;
@@ -17,7 +29,6 @@ int	main(int argc, char *argv[])
 		a->top = make_stack(argc, argv, &a);
 		check_duplicate(a->top);
 		b = init_stack();
-
 		checker(a, b);
 		free_all(a, b);
 	}
