@@ -1,5 +1,28 @@
 #include "checker.h"
 
+int		is_sorted(t_stack *a)
+{
+	t_node	*node;
+
+	node = a->top;
+	while (node)
+	{
+		if (node->next)
+		{
+			if (node->value > node->next->value)
+				return (0);
+		}
+		if (node->next)
+			node = node->next;
+		else
+			break ;
+	}
+	if (node->value == a->bottom->value)
+		return (1);
+	else
+		return (0);
+}
+
 void	check_operations(char *buf, t_stack *a, t_stack *b)
 {
 	if (!ft_strcmp("pa", buf) || !ft_strcmp("pb", buf))
@@ -23,4 +46,9 @@ void	checker(t_stack *a, t_stack *b)
 		check_operations(buf, a, b);
 		free(buf);
 	}
+	free(buf);
+	if (is_sorted(a) && !b->top)
+		ft_putendl_fd("OK", 1);
+	else
+		ft_putendl_fd("KO", 1);
 }
