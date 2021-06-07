@@ -11,8 +11,10 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rc
 
-SRCS_DIR =	./srcs		\
-			./srcs/gnl	\
+SRCS_DIR =	./srcs				\
+			./srcs/gnl			\
+			./srcs/operations	\
+			./srcs/pre_settings
 
 OBJS_DIR = ./objs
 INC_DIR = ./includes
@@ -22,6 +24,16 @@ LIBFT_DIR = ../libft
 
 SRCS =	./srcs/gnl/get_next_line_bonus.c		\
 		./srcs/gnl/get_next_line_utils_bonus.c	\
+		./srcs/operations/push.c			\
+		./srcs/operations/reverse_rotate.c	\
+		./srcs/operations/swap.c			\
+		./srcs/operations/rotate.c			\
+		./srcs/pre_settings/check_arg.c		\
+		./srcs/pre_settings/ft_atoi.c		\
+		./srcs/pre_settings/init_stack.c	\
+		./srcs/main.c			\
+		./srcs/checker.c		\
+		./srcs/do_operations.c
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
