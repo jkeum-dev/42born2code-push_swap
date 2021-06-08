@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 17:23:47 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/07 14:39:56 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/06/08 16:09:17 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,9 @@ static void	back_to_orig_rb(t_stack *a, t_stack *b, int *cnt, t_value *var)
 	}
 	else
 	{
+		rrr = var->rb;
 		while (rrr--)
-			reverse_rotate_stack(a, A);
+			reverse_rotate_stack(b, B);
 	}
 }
 
