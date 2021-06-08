@@ -48,9 +48,10 @@ RM = rm -f
 
 all : $(NAME)
 
-bonus : all
-	@$(MAKE) -C ./checker
-	@cp ./checker/checker ./checker
+bonus : re
+	@$(MAKE) fclean -C ./bonus_checker
+	@$(MAKE) -C ./bonus_checker
+	@cp ./bonus_checker/checker ./checker
 
 $(NAME) : $(OBJS)
 	@$(MAKE) -C $(LIBFT_DIR)
@@ -65,7 +66,7 @@ $(OBJS_DIR)/%.o : %.c | $(OBJS_DIR)
 clean :
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 	@$(RM) -r $(OBJS_DIR)
-	@if [ -f ./checker/checker ]; then $(RM) ./checker/checker; fi;
+	@if [ -f ./bonus_checker/checker ]; then $(RM) ./bonus_checker/checker; fi;
 
 fclean : clean
 	@$(RM) $(NAME)
