@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 17:37:43 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/05 17:37:47 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/06/08 16:56:22 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,16 @@ void		hanlde_sort_five(int size, t_stack *a, t_stack *b, int flag)
 void		handle_arg_five(t_stack *a, t_stack *b)
 {
 	int	pb;
-	int	min;
+	int	mid;
 
 	pb = 0;
-	min = get_min_value(a->top, a->size);
+	mid = get_mid_value_five(a->top);
 	while (1)
 	{
-		if (a->top->value == min)
+		if (a->top->value < mid)
 		{
 			push_stack(a, b, B);
 			pb++;
-			min = get_min_value(a->top, a->size);
 		}
 		else
 			rotate_stack(a, A);
