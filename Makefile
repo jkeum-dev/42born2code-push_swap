@@ -65,8 +65,8 @@ $(OBJS_DIR)/%.o : %.c | $(OBJS_DIR)
 
 clean :
 	@$(MAKE) -C $(LIBFT_DIR) fclean
+	@$(MAKE) -C bonus_checker fclean
 	@$(RM) -r $(OBJS_DIR)
-	@if [ -f ./bonus_checker/checker ]; then $(RM) ./bonus_checker/checker; fi;
 
 fclean : clean
 	@$(RM) $(NAME)
