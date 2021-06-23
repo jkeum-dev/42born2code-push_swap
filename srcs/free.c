@@ -6,18 +6,18 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 16:30:52 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/07 16:37:25 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/06/23 21:39:04 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_a(t_stack *a)
+static void	free_stack(t_stack *stack)
 {
 	t_node	*node;
 	t_node	*temp;
 
-	node = a->top;
+	node = stack->top;
 	while (node)
 	{
 		if (node->next)
@@ -30,32 +30,11 @@ static void	free_a(t_stack *a)
 		else
 			break ;
 	}
-	free(a);
-}
-
-static void	free_b(t_stack *b)
-{
-	t_node	*node;
-	t_node	*temp;
-
-	node = b->top;
-	while (node)
-	{
-		if (node->next)
-			temp = node->next;
-		else
-			temp = NULL;
-		free(node);
-		if (temp)
-			node = temp;
-		else
-			break ;
-	}
-	free(b);
+	free(stack);
 }
 
 void		free_all(t_stack *a, t_stack *b)
 {
-	free_a(a);
-	free_b(b);
+	free_stack(a);
+	free_stack(b);
 }
