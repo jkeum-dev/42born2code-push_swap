@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:29:49 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/08 16:33:14 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/06/23 21:40:26 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ int	main(int argc, char *argv[])
 		check_duplicate(a->top);
 		b = init_stack();
 		if (is_sorted(a))
+		{
+			free_all(a, b);
 			return (0);
+		}
 		push_swap(a, b);
 		free_all(a, b);
 	}
