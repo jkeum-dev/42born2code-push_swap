@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 16:30:07 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/05 16:30:08 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/06/26 17:38:31 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	swap_stack(t_stack *stack, int flag)
 		return ;
 	top_next = stack->top->next;
 	temp = stack->top;
+	if (stack->size > 2)
+		top_next->next->prev = stack->top;
 	temp->next = top_next->next;
 	stack->top = top_next;
 	stack->top->prev = NULL;
