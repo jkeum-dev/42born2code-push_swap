@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 16:37:47 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/05 16:39:18 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/07/02 15:10:47 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int		set_node(char *argv, t_node **node, t_stack **stack)
 	t_node	*temp;
 
 	arg = ft_split(argv, ' ');
-	if (!arg)
+	if (!arg || !*arg)
 		return (0);
 	i = -1;
 	while (arg[++i])
