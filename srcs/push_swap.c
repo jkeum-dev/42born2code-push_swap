@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 16:41:01 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/08 16:27:21 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/07/06 18:28:08 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	init_value(t_value *var)
 
 void	select_pivot(int r, t_stack *stack, t_value *var)
 {
-	int	min;
-	int	max;
+	long	min;
+	long	max;
 
 	min = get_min_value(stack->top, r);
 	max = get_max_value(stack->top, r);

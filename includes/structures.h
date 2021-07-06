@@ -6,7 +6,7 @@
 /*   By: jkeum <jkeum@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 17:56:31 by jkeum             #+#    #+#             */
-/*   Updated: 2021/06/05 17:56:32 by jkeum            ###   ########.fr       */
+/*   Updated: 2021/07/06 18:29:52 by jkeum            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ struct	s_node
 
 struct	s_value
 {
-	int	piv_big;
-	int	piv_small;
-	int	ra;
-	int	rb;
-	int	pa;
-	int	pb;
+	long	piv_big;
+	long	piv_small;
+	int		ra;
+	int		rb;
+	int		pa;
+	int		pb;
 };
 
 #endif
